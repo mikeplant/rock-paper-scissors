@@ -1,7 +1,10 @@
 
 
 // Create a Rock Paper Scissors game played using the console
-// 
+
+let computerScore = 0;
+let playerScore = 0;
+
 // Randomly generate computer's choice
 // Generate random number from 0-2
 // Assign choice based on number generate
@@ -48,24 +51,52 @@ function getPlayerChoice() {
 
 function playRound(playerChoice, computerChoice) {
 
-  if (playerChoice === "Rock" && computerChoice === "Paper") {
-    return "You Lose! Paper beats Rock";
-  } else if (playerChoice === "Paper" && computerChoice === "Scissors") {
-    return "You Lose! Scissors beat Paper";
-  } else if (playerChoice === "Scissors" && computerChoice === "Rock") {
-    return "You Lose! Rock beats Scissors";
-  } else if (computerChoice === "Rock" && playerChoice === "Paper") {
-    return "You Win! Paper beats Rock";
-  } else if (computerChoice === "Paper" && playerChoice === "Scissors") {
-    return "You Win! Scissors beat Paper";
-  } else if (computerChoice === "Scissors" && playerChoice === "Rock") {
-    return "You Win! Rock beats Scissors";
+  if (
+    (playerChoice === "Rock" && computerChoice === "Paper") || 
+    (playerChoice === "Paper" && computerChoice === "Scissors") || 
+    (playerChoice === "Scissors" && computerChoice === "Rock")
+  ) {
+    computerScore++;
+    return `You Lose! ${computerChoice} beats ${playerChoice}`;
+  } else if (
+    (computerChoice === "Rock" && playerChoice === "Paper") || 
+    (computerChoice === "Paper" && playerChoice === "Scissors") || 
+    (computerChoice === "Scissors" && playerChoice === "Rock")
+    ) {
+    playerScore++;
+    return `You Win! ${playerChoice} beats ${computerChoice}`;
   } else {
     return `${playerChoice} vs ${computerChoice}! It's a Tie!`;
   } 
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+// Play 5 rounds
+// Increment score per win
+// Determine winner and alert results
+
+function game() {
+  for(let i=0; i < 5; i++) {
+    alert(`${playRound(getPlayerChoice(), getComputerChoice())}
+    Current Score:
+    Player: ${playerScore}
+    Computer: ${computerScore}`);
+  }
+
+  if (playerScore > computerScore) {
+    alert(`Congratulations! You won ${playerScore}-${computerScore}`);
+  } else if (playerScore < computerScore) {
+    alert(`Unlucky! You lost ${computerScore}-${playerScore}`);
+  } else {
+    alert(`It's a tie! You drew ${playerScore}-${computerScore}`);
+  }
+}
+
+game();
+
+
+// console.log(playRound(getPlayerChoice(), getComputerChoice()));
+// console.log(`Player: ${playerScore}
+// Computer:${computerScore}`);
 
 // 
 // 
