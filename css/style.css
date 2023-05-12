@@ -1,0 +1,85 @@
+body {
+  font-family: 'Tangerine';
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 76px;
+  margin: 35px;
+  text-align: center;
+}
+
+.header p {
+  font-size: 45px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: rgb(124, 77, 77);
+}
+
+.choices-div {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.choices-div img {
+  height: 250px;
+  width: 250px;
+  border-radius: 6px;
+  margin: 0;
+}
+
+.choice-btn {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0;
+  box-shadow: 0 0 7px rgb(158, 158, 158);
+}
+
+.choice-btn:hover {
+  cursor: pointer;
+  border-style: solid;
+  box-shadow: 0 0 7px rgb(4, 151, 102);
+}
+
+.choice-btn:active {
+  border-color: #ffffff;
+}
+
+.results-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-div h2 {
+  font-size: 40px;
+}
+
+.results-div p {
+  font-size: 35px;
+  margin: 0;
+  text-align: center;
+}
+
+.winner {
+  color: rgb(4, 151, 102);
+  font-weight: 700;
+}
+
+.loser {
+  color: rgb(75, 45, 45);
+  font-weight: 700;
+}
