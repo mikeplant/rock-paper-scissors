@@ -7,7 +7,7 @@ const button = document.querySelectorAll('button');
 // Listen for clicks on choice buttons and play round accordingly
 button.forEach(btn => {
   btn.addEventListener('click', e => {
-    if (isGameOver()) resetGame();
+    if (checkGameOver()) resetGame();
     const playerChoice = e.target.parentNode.classList[0];
     const choiceCapitalised = playerChoice[0].toUpperCase() + playerChoice.slice(1);
     if (choiceCapitalised === 'Rock' || choiceCapitalised === 'Paper' || choiceCapitalised === 'Scissors') {
@@ -67,7 +67,7 @@ function showResult(string) {
   }
 }
 
-function isGameOver() {
+function checkGameOver() {
   return (playerScore === 5 || computerScore === 5);
 }
 
